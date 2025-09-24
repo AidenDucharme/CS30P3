@@ -15,6 +15,7 @@ public class roll1 {
 
 	private JFrame frame;
 	private JTextField result;
+	private JTextField info;
 
 	/**
 	 * Launch the application.
@@ -69,7 +70,7 @@ public class roll1 {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel pic = new JLabel("");
-		pic.setBounds(82, 159, 46, 14);
+		pic.setBounds(25, 32, 179, 72);
 		frame.getContentPane().add(pic);
 		
 		JButton rButton = new JButton("ROLL!");
@@ -80,33 +81,33 @@ public class roll1 {
 
 				if (ran == 1)
 				{
-					picture.setText("1");
-					picture.setIcon(d1);
+					icon.setText("1");
+					pic.setIcon(d1);
 				}
 				if (ran == 2)
 				{
-					picture.setText("2");
-					picture.setIcon(d1);
+					info.setText("2");
+					pic.setIcon(d1);
 				}
 				if (ran == 3)
 				{
-					picture.setText("3");
-					picture.setIcon(d1);
+					info.setText("3");
+					pic.setIcon(d1);
 				}
 				if (ran == 4)
 				{
-					picture.setText("4");
-					picture.setIcon(d1);
+					info.setText("4");
+					pic.setIcon(d1);
 				}
 				if (ran == 5)
 				{
-					picture.setText("5");
-					picture.setIcon(d1);
+					info.setText("5");
+					pic.setIcon(d1);
 				}
 				if (ran == 6)
 				{
-					picture.setText("6");
-					picture.setIcon(d1);
+					info.setText("6");
+					pic.setIcon(d1);
 				}
 				
 				
@@ -114,6 +115,11 @@ public class roll1 {
 		});
 		rButton.setBounds(247, 101, 89, 23);
 		frame.getContentPane().add(rButton);
+		
+		info = new JTextField();
+		info.setBounds(66, 198, 86, 20);
+		frame.getContentPane().add(info);
+		info.setColumns(10);
 		
 		
 	}
