@@ -70,7 +70,7 @@ public class localBank {
 		panel.setLayout(null);
 		
 		JComboBox action = new JComboBox();
-		action.setModel(new DefaultComboBoxModel(new String[] {"Select an action:", "Deposit", "Withdrawal", "Add Account"}));
+		action.setModel(new DefaultComboBoxModel(new String[] {"Select an action:", "Deposit", "Withdrawal", "Add Account", "Delete an acount"}));
 		action.setBounds(0, 9, 188, 22);
 		panel.add(action);
 		
@@ -125,40 +125,47 @@ public class localBank {
 			String oldBalance;
 			String option;
 			int newBalance;
+			String message;
+			double nBalance;
 			
-			if(action.getSelectedItem().equals("Deposit"))
+			
+			if(action.getSelectedItem().equals("Deposit"))//When the action "Deposit" is selected
 			{
 				//int OGB = Integer.parseInt(originalBalance.getText());
 				//int added = Integer.parseInt(amount.getText());
 				//output.setText( Integer.toString(OGB + added));
-				String message = myBank.transaction(1, an.getText(), Double.parseDouble(amount.getText()));
+				message = myBank.transaction(1, an.getText(), Double.parseDouble(amount.getText()));
 				
-				output.setText("Your new balance is: " + message);
+				output.setText("Your new balance is: " + message); //Outputting new balance
 				
 			}
-			else if(action.getSelectedItem().equals("Add Account"))
+			
+			
+			
+			if(action.getSelectedItem().equals("Add Account")) //Add acount action
 			{
-				double nBalance = Double.parseDouble(originalBalance.getText());
-				String message =  myBank.addAccount(first.getText(), last.getText(), nBalance);
+				 nBalance = Double.parseDouble(originalBalance.getText());
+				message =  myBank.addAccount(first.getText(), last.getText(), nBalance);
 				
 				output.setText("Your new Account is: " + message);
 			}
-			if(action.getSelectedItem().equals("Withdrawal"))
+			if(action.getSelectedItem().equals("Delete an acount")) //Withdrawal action
 			{
-				int OGB = Integer.parseInt(originalBalance.getText());
-				int added = Integer.parseInt(amount.getText());
-				if (OGB - added < 0)
-				{
-					output.setText("You dont have enough moeny for this transaction");
-				}
-				output.setText("Your new balance is: " + Integer.toString(OGB - added));
+				message = myBank.deleteAccount(an.getText());
+				output.setText(message);
+								
+			}	}});
+			
+			
+			if(action.getSelectedItem().equals("Delete an acount")) //Add delete action
+			{
+				double nBalance = Double.parseDouble(originalBalance.getText());
+				String message =  myBank.deleteAccount(an.getText());
+				
+				output.setText("Your account has been deleted ");
 				
 			}
-			
-			
-				
-			
-		}});
+	
 		button.setBounds(255, 161, 141, 23);
 		panel.add(button);
 		

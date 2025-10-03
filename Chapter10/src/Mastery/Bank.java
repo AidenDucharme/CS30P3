@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Bank 
 {
-	private ArrayList accounts;
+	ArrayList accounts;
 		
 	
 	
