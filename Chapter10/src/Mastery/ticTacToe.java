@@ -27,16 +27,7 @@ public class ticTacToe {
     private JLabel winner;
     private String player = "X"; // Start with X
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(() -> {
-            try {
-            	ticTacToe window = new ticTacToe();
-                window.frame.setVisible(true);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-    }
+    
 
     public ticTacToe() {
         initialize();
@@ -48,7 +39,13 @@ public class ticTacToe {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
-        // Create buttons
+        // Create buttons (this order)
+        
+       // b1 b2 b3
+       // b4 b5 b6
+       // b7 b8 b9
+        
+        
         b1 = new JButton(""); b1.setBounds(10, 10, 120, 70); frame.add(b1);
         b2 = new JButton(""); b2.setBounds(150, 10, 120, 70); frame.add(b2);
         b3 = new JButton(""); b3.setBounds(290, 10, 120, 70); frame.add(b3);
@@ -61,7 +58,7 @@ public class ticTacToe {
         b8 = new JButton(""); b8.setBounds(150, 170, 120, 70); frame.add(b8);
         b9 = new JButton(""); b9.setBounds(290, 170, 120, 70); frame.add(b9);
 
-        // Winner label
+        // Winner Jlabel
         winner = new JLabel("");
         winner.setFont(new Font("Arial", Font.BOLD, 24));
         winner.setBounds(120, 260, 250, 50);
@@ -80,11 +77,11 @@ public class ticTacToe {
     }
 
     private void buttonClicked(JButton b) {
-        if (!b.getText().equals("")) return; // already used
+        if (!b.getText().equals("")) return; 
 
         b.setText(player);
 
-        // ✅ Win checking done here in the same method
+        //Win checking done below
         if (
             // Rows
             (b1.getText().equals(player) && b2.getText().equals(player) && b3.getText().equals(player)) ||
@@ -100,19 +97,19 @@ public class ticTacToe {
             (b1.getText().equals(player) && b5.getText().equals(player) && b9.getText().equals(player)) ||
             (b3.getText().equals(player) && b5.getText().equals(player) && b7.getText().equals(player))
         ) {
-            winner.setText(player + " Wins!");
-            disableButtons();
+            winner.setText(player + " Wins!"); //outputting who wins
+            disableButtons(); //disabling buttons calling method 
         } else {
             // Switch player if no winner yet
-            if (player.equals("X")) {
+            if (player.equals("X")) { //if the player is currently set to X, it changes to O
                 player = "O";
-            } else {
+            } else { //If the player is currently O, it changes it to X
                 player = "X";
             }
         }
     }
 
-    private void disableButtons() {
+    private void disableButtons() { //Disabling buttons in a method
         b1.setEnabled(false); b2.setEnabled(false); b3.setEnabled(false);
         b4.setEnabled(false); b5.setEnabled(false); b6.setEnabled(false);
         b7.setEnabled(false); b8.setEnabled(false); b9.setEnabled(false);
@@ -125,7 +122,13 @@ public class ticTacToe {
 
 
 
-/*public class ticTacToe {
+/*
+ * First attempt at code:
+ * 
+ * 
+ * 
+ * 
+ * public class ticTacToe {
 
 	private JFrame frame;
 	

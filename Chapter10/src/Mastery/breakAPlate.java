@@ -53,7 +53,7 @@ public class breakAPlate {
 		ImageIcon sticker = new ImageIcon("../Chapter10/src/Mastery/sticker.gif"); //sticker prize
 
 		
-		
+		//Adding elements for the program
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 746, 569);
