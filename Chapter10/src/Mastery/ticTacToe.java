@@ -64,7 +64,8 @@ public class ticTacToe {
         winner.setBounds(120, 260, 250, 50);
         frame.add(winner);
 
-        // Add listeners directly
+        //When each button (b1 to b9) is clicked, it runs the buttonClicked() method for that specific button.
+    
         b1.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) { buttonClicked(b1); }});
         b2.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) { buttonClicked(b2); }});
         b3.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) { buttonClicked(b3); }});
