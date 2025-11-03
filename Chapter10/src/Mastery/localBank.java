@@ -226,6 +226,8 @@ public class localBank {
 				
 			}
 	
+			//More editing to the visual design of the project
+			
 		button.setBounds(245, 215, 141, 23);
 		panel.add(button);
 		
