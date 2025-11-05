@@ -8,17 +8,31 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.NumberFormat;
+import java.awt.event.ActionEvent;
 
 public class studentSemesterAverage {
+	
+	
+	
+	private static final String FILE_PATH = "C:\\Users\\38309001\\git\\CS30P3\\Chapter11\\src\\Skillbuilders\\studentTXT";
+	private File textFile;
+	
 
 	private JFrame frame;
 	private JTextField studentName;
 	private JTextField gradeLevel;
-	private JTextField studentNumber;
+	private JTextField semesterNumber;
 	private JTextField gradeOne;
 	private JTextField gradeTwo;
 	private JTextField gradeThree;
 	private JTextField gradeFour;
+	private JLabel avgDis;
 
 	/**
 	 * Launch the application.
@@ -47,8 +61,15 @@ public class studentSemesterAverage {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
+		textFile = new File(FILE_PATH);
+		
+		
+		
+		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 349);
+		frame.setBounds(100, 100, 450, 473);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -89,7 +110,7 @@ public class studentSemesterAverage {
 		frame.getContentPane().add(lblAverage);
 		
 		JLabel dis = new JLabel("");
-		dis.setBounds(166, 192, 191, 14);
+		dis.setBounds(10, 217, 404, 172);
 		frame.getContentPane().add(dis);
 		
 		studentName = new JTextField();
@@ -102,10 +123,10 @@ public class studentSemesterAverage {
 		gradeLevel.setBounds(134, 33, 255, 20);
 		frame.getContentPane().add(gradeLevel);
 		
-		studentNumber = new JTextField();
-		studentNumber.setColumns(10);
-		studentNumber.setBounds(134, 58, 255, 20);
-		frame.getContentPane().add(studentNumber);
+		semesterNumber = new JTextField();
+		semesterNumber.setColumns(10);
+		semesterNumber.setBounds(134, 58, 255, 20);
+		frame.getContentPane().add(semesterNumber);
 		
 		gradeOne = new JTextField();
 		gradeOne.setColumns(10);
@@ -127,12 +148,70 @@ public class studentSemesterAverage {
 		gradeFour.setBounds(134, 166, 255, 20);
 		frame.getContentPane().add(gradeFour);
 		
+		
+		if(textFile.exists())
+		{
+			try
+			{
+				if(textFile.createNewFile())
+				{
+					dis.setText("The file is created");
+				}
+				
+			}
+			catch(IOException ex)
+			{
+				dis.setText("Error: " + ex.getMessage());
+				System.err.println("IOExeption: " + ex.getMessage());
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
 		JButton saveToFile = new JButton("Save to File");
-		saveToFile.setBounds(50, 245, 124, 23);
+		saveToFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				File dataFile = new File("..\\Chapter11\src\\Skillbuilders\studentTXT");;
+				FileReader in;
+				BufferedReader readFile;
+				
+				String stuName;
+				
+				double gradeL =  Double.parseDouble(gradeLevel.getText());
+				double semesterN =  Double.parseDouble(semesterNumber.getText());
+				double gradeO =  Double.parseDouble(gradeOne.getText());
+				double gradeT =  Double.parseDouble(gradeTwo.getText());
+				double gradeTh =  Double.parseDouble(gradeThree.getText());
+				double gradeF =  Double.parseDouble(gradeFour.getText());
+				
+				double averaged;
+
+				NumberFormat percent = NumberFormat.getPercentInstance();
+				StringBuilder output = new StringBuilder();
+				
+				
+				
+				
+				
+				
+		}
+		
+		});
+		saveToFile.setBounds(10, 400, 124, 23);
 		frame.getContentPane().add(saveToFile);
 		
 		JButton viewFileContents = new JButton("View File Contents");
-		viewFileContents.setBounds(194, 245, 124, 23);
+		viewFileContents.setBounds(144, 400, 124, 23);
 		frame.getContentPane().add(viewFileContents);
+		
+		avgDis = new JLabel("");
+		avgDis.setBounds(71, 192, 46, 14);
+		frame.getContentPane().add(avgDis);
 	}
 }
