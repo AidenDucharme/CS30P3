@@ -195,8 +195,15 @@ public class studentSemesterAverage {
 				NumberFormat percent = NumberFormat.getPercentInstance();
 				StringBuilder output = new StringBuilder();
 				
-				
-				
+				  try (FileWriter writer = new FileWriter(filename, true)) {
+			            
+				  } catch (IOException e) {
+			           dis.setText("touble saving");
+			           
+			           
+			           
+			           
+			          
 				
 				
 				
