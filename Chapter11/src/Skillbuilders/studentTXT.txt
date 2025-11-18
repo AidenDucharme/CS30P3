@@ -1,0 +1,36 @@
+Student Name: Aiden Ducharme
+Grade Level: 12
+Semester Number: 1
+Grades: 98.0, 85.0, 97.0, 90.0
+Average: 92.5
+---------------------------------------------
+Student Name: Aiden Ducharme
+Grade Level: 12
+Semester Number: 1
+Grades: 98.0, 85.0, 97.0, 90.0
+Average: 92.5
+---------------------------------------------
+Student Name: Aiden Ducharme
+Grade Level: 12
+Semester Number: 1
+Grades: 98.0, 85.0, 97.0, 90.0
+Average: 92.5
+---------------------------------------------
+Student Name: Aiden Ducharme
+Grade Level: 12
+Semester Number: 1
+Grades: 99.0, 95.0, 98.0, 93.0
+Average: 96.25
+---------------------------------------------
+Student Name: Aiden Ducharme
+Grade Level: 12
+Semester Number: 1
+Grades: 99.0, 95.0, 98.0, 95.0
+Average: 96.75
+---------------------------------------------
+Student Name: Aiden Ducharme
+Grade Level: 12
+Semester Number: 1
+Grades: 97.0, 99.0, 93.0, 96.0
+Average: 96.25
+---------------------------------------------
