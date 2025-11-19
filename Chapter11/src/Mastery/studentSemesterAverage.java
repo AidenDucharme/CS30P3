@@ -171,8 +171,7 @@ public class studentSemesterAverage {
 					writer.write("Grades: " + g1 + ", " + g2 + ", " + g3 + ", " + g4 + "\n"); //grades 
 					writer.write("Average: " + avg + "\n");//average 
 					writer.write("-----------------------------\n"); //This writes a line to separate each students data
-
-					
+					writer.close(); //Closes that no more stuff will be saved					
 
 					displayLabel.setText("Saved to file!"); //Confirming to the user that the data inputed has been sent and stored in the file
 
@@ -193,11 +192,11 @@ public class studentSemesterAverage {
 					String line; //This creates a place to store 1 line of text from the file.
 					String all = "";
 
-					while ((line = reader.readLine()) != null) {  
+					while ((line = reader.readLine()) != null) {  //Reading one line in the file at a time until no lines are left 
 						all += line + "<br>";
 					}
 
-
+					reader.close();  //lets file know that no more will be read
 				
 					displayLabel.setText("<html>" + all + "</html>");	// Display info in file
 

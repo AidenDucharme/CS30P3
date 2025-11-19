@@ -1,0 +1,12 @@
+Student Name: Ad
+Grade Level: 11
+Semester: 34
+Grades: 45.0, 76.0, 46.0, 99.0
+Average: 66.5
+-----------------------------
+Student Name: BK
+Grade Level: 12
+Semester: 56
+Grades: 34.0, 76.0, 90.0, 97.0
+Average: 74.25
+-----------------------------
