@@ -1,3 +1,18 @@
+/*
+
+Program: studentSemesterAverage         Last Date of this Revision: 11/20/2025
+
+Purpose: An application that allows a teacher to input student information to a file (such as name, grade level and grades) where all of the students grades are kept. When wanted, the user can access all of the data. 
+Author: Aiden Ducharme
+School: CHHS
+Course: CSE2130 - File Structures & Exception Handling
+ 
+
+*/
+
+
+
+
 package Mastery;
 
 import java.awt.EventQueue;
