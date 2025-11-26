@@ -1,10 +1,10 @@
 package CrestMart;
 
-public abstract class manager extends employee
+public class Manager extends employee
 {
 	private double yearlySalary;
 	
-	public manager(String fn, String ln, double s) 
+	public Manager(String fn, String ln, double s) 
 	{
 		super(fn, ln);
 		yearlySalary = s;

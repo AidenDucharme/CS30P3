@@ -1,6 +1,6 @@
 package CrestMart;
 
-public abstract class associate extends employee
+public class associate extends employee
 {
 	
 	private double hourlyPayRate;
