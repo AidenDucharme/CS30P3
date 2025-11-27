@@ -1,5 +1,5 @@
 package Skillbuilders;
-import java.util.Scanner;
+
 
 
 public class PuckPartOneOfTwo extends Disk
