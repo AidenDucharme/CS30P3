@@ -2,68 +2,103 @@ package Skillbuilders;
 import java.util.Scanner;
 
 
-public abstract class PuckPartOneOfTwo 
+public class PuckPartOneOfTwo extends Disk
 {
-	Scanner input = new Scanner(System.in);
-	private String firstName, lastName;
-	
-	public void getWeight(int check, boolean standardWeight )
-	{
-		System.out.print("Weight: ");
-		check = input.nextInt();
-		
-		if (check > 5 && check < 5.5)
-		{
-		
-			standardWeight = true;
-		}
-		else
-		{
-			
-			standardWeight = false;
-		}
-	}
-	
-	public void getDivision(boolean standardDivision, int an)
-	{
-		System.out.print("Are you in standard divion or in youth divion (1 for standard, 2 for child): ");
-		an = input.nextInt();
-		
-		if (an == 1)
-		{
-		
-			standardDivision = true;
-		}
-		else
-		{
-			
-			standardDivision = false;
-		}
-		
-		
-		
-	}
-	
-	
-	
-	
+	double minStandWeight = 5;
+	double maxStandWeight = 5.5;
+	double minYouthWeight = 4;
+	double maxYouthWeight = 4.5;
+	double weight;
+	boolean standard, youth;
+
 	//Constructor method 
-	public PuckPartOneOfTwo(boolean standard, boolean youth, int check)
+	public PuckPartOneOfTwo(double w)
 	{
 		
+		super(1.5, 1);
+		weight = w;
+		
+		
+		
+		if (weight >= 5 && weight <= 5.5)
+		{
+		
+			standard= true;
+			youth = false;
+		}
+		else
+		{
+			
+			standard= false;
+			youth = true;
+		}
 		
 		
 		
 		
 		
+		
+		
+	
 	}
 	
+	
+	
+	
+	
+	public String getDivision()
+	{
+		String div;
+		
+		if(standard)
+		{
+			div = "Puck is standard";
+		}
+		
+		else
+		{
+			div = "Puck is a youth puck";
+		}
+	
+		
+	 return div;
+	
+	
+	
+	
+	
+	}
+	
+	public boolean equals(Object c) 
+	{
+		PuckPartOneOfTwo testObj = (PuckPartOneOfTwo)c;
+		
+		if(testObj.getWeight() == weight)
+		{
+			return(true);
+			
+		}
+		else
+		{
+			return(false);
+		}
+	}
+	
+	private double getWeight() {
+		
+		return weight;
+	}
+
+
+
+
+
 	public String toString()
 	{
-		return(firstName + " " + lastName);
+		return("The pucks weight is: " + getWeight() + " And the division is: " + getDivision());
 	}
 	
-	abstract double pay(double period);
+
 	
 
 }
