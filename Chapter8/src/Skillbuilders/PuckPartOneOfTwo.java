@@ -90,7 +90,24 @@ public class PuckPartOneOfTwo extends Disk
 	}
 
 
-
+	public int compareTo(Object p)
+	{
+		PuckPartOneOfTwo testPuck = (PuckPartOneOfTwo)p;
+		
+		if(testPuck.getWeight() > weight)
+		{
+			return(-1);
+		}
+		else if(testPuck.getWeight() == weight)
+		{
+			return(0);
+		
+		}
+		else
+		{
+			return(1);
+		}
+	}
 
 
 	public String toString()
