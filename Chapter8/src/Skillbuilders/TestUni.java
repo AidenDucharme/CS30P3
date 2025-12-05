@@ -32,7 +32,7 @@ public class TestUni
 		int empNum;
 		double payArg;
 		
-		Faculty emp = emp1;
+		UEmployee emp = emp1;
 	
 		 
 		do
@@ -51,8 +51,8 @@ public class TestUni
 				
 				switch(empNum)
 				{
-				case 1: emp1 = emp1; break;
-				case 2: emp1 = emp2; break;
+				case 1: emp = emp1; break;
+				case 2: emp = emp2; break;
 				}
 				
 				 if(action.equalsIgnoreCase("E"))

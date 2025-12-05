@@ -1,6 +1,6 @@
 package Skillbuilders;
 
-public class Staff 
+public class Staff extends UEmployee
 {
 	
 private double yearlySalary;

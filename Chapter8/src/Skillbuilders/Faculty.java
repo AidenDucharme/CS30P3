@@ -1,6 +1,9 @@
 package Skillbuilders;
 
-public class Faculty 
+import CrestMart.employee;
+
+public class Faculty extends UEmployee
+
 
 
 {
