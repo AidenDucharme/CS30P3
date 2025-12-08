@@ -2,21 +2,30 @@ package Skillbuilders;
 
 public abstract class UEmployee 
 {
-private String firstName, lastName;
+ String firstName, lastName;
+double salary;
 	
 	//Constructor method 
-	public UEmployee(String fn, String ln)
+	public UEmployee(String fn, String ln, double sal)
 	{
 		firstName = fn;
 		lastName = ln;
+		sal = salary;
 	}
 	
-	public String toString()
+	
+	public String getEmployeeName()
 	{
-		return(firstName + " " + lastName);
+		return(firstName, lastName);
 	}
 	
-	abstract double pay(double period);
+	public String getEmployeeSal()
+	{
+		return(salary);
+	}
+	
+	
+	
 	
 	
 	
