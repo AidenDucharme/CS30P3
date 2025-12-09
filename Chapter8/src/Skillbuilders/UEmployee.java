@@ -1,27 +1,26 @@
 package Skillbuilders;
 
-public abstract class UEmployee 
+public abstract class UEmployee //Abstract allows other classes to inherit information from this class
 {
- String firstName, lastName;
-double salary;
+ String name; //Create variable that will hold the name of the employee (String cause its words)
+double salary; //Create variable that will hold the salary of the variable (double because it may be a decimal number)
 	
 	//Constructor method 
-	public UEmployee(String fn, String ln, double sal)
+	public UEmployee(String nam, double sal)
 	{
-		firstName = fn;
-		lastName = ln;
-		sal = salary;
+		name = nam; //Variable in the constructor method for the name
+		salary = sal; //Variable in the constructor method for the salary
 	}
 	
 	
 	public String getEmployeeName()
 	{
-		return(firstName, lastName);
+		return(name); //Return name of employee when called
 	}
 	
-	public String getEmployeeSal()
+	public double getEmployeeSal() //Method for salary 
 	{
-		return(salary);
+		return(salary); //Return salary of employee when called.
 	}
 	
 	

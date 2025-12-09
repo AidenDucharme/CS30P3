@@ -2,48 +2,35 @@ package Skillbuilders;
 
 import CrestMart.employee;
 
-public class Faculty extends UEmployee
+public class Faculty extends UEmployee //allows it to inherit information from the UEmployee class
 
 
 
 {
 	
-private double hourlyPayRate;
+	String department; //Declaring a variable that will hold the value for the department the employee is in (string because words will be the value)
 	
-	public Faculty(String fn, String ln, double hRate)
+
+	
+	public Faculty(String name, double sal, String dept) //Constructor method
 	{
-		super(fn,ln);
-		hourlyPayRate = hRate;
+		super(name,sal); //Inherit name of employee and salary from the UEmployee class
+		department = dept; //Declare a variable in the constructor method for department
 		
 	}
 	
-	
-	public double pay(double hours)
+	public String getDept() //Method that will return the department the employee is in
 	{
-		double payEarned;
-		
-		if (hours > 40)
-		{
-			payEarned = ((hourlyPayRate * 40) + (hourlyPayRate * 1.5) * (hours - 40));
-			
-			
-		}
-		
-		else
-		{
-			payEarned = hours*hourlyPayRate;
-		}
-		
-		
-	return payEarned;
-	
-	
-	
+		return(department);//Returning the department 
 	}
+	
 	
 	public String toString()
+	
 	{
-		return(super.toString() + ", Associate" + "Pay Rate: " + hourlyPayRate);
+		String empInfo; //Holds the info of the employee
+		empInfo = super.getEmployeeName() + " " + department + " " + super.getEmployeeSal(); //Gathers all of the info in a presentable statment under the variable empInfo
+		return(empInfo); //Present all of the info in the empInfo variable
 	}
 	
 	
