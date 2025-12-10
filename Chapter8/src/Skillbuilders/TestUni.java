@@ -68,11 +68,11 @@ public class TestUni
 	UEmployee emp1, emp2, emp3; //declaring employees from UEmployee class
 	 Scanner scanner = new Scanner(System.in); //Allowing user input
 	
-	emp1 = assignEmployee();
-	emp2 = assignEmployee();
+	emp1 = assignEmployee(); //The value for the first employee is called from the method where the user is assigned values and asked 
+	emp2 = assignEmployee(); //Same for the next too
 	emp3 = assignEmployee();
-	System.out.println("University Employees: ");
-	
+	System.out.println("University Employees: "); //Formating before presenting data 
+	//Presenting data on employees to user (output)
 	System.out.println(emp1);
 	System.out.println(emp2);
 	System.out.println(emp3);
