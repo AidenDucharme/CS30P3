@@ -1,0 +1,98 @@
+package Skillbuilders;
+
+public class Queue 
+{
+	private Object[] data;
+	private int front, rear, maxSize;
+	
+	public Queue(int maxIdems) //constructor
+	{
+		front = -1;
+		rear = -1; //Both of these are empty queue
+		data = new Object[maxIdems];
+		maxSize = maxIdems;
+	}
+	
+	public Object front()
+	{
+		return(data[front]);
+	}
+
+	public Object dequeue() //remove from queue
+	{
+		Object idem;
+		idem = data[front];
+		
+		if(front == rear)
+		{
+			makeEmpty();
+		}
+		else
+		{
+			front = (front + 1) % maxSize;
+		}
+		return idem;
+	}
+	
+	public void enqueue(Object idem)
+	{
+		if(isEmpty())
+		{
+			rear = 0;
+			front = 0;
+			data[rear] = idem;
+		}
+		else
+		{
+			rear = (rear + 1) % maxSize;
+			data[rear] = idem;
+		}
+	}
+	
+	
+	public boolean isEmpty()
+	{
+		if(front == -1 && rear == -1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	
+	public void makeEmpty()
+	{
+		front = -1;
+		rear = -1;
+	}
+
+	public int size()
+	{
+		if(isEmpty())
+		{
+			return 0;
+		}
+		else
+		{
+			if(rear > front)
+			{
+				return(rear - front + 1);
+			}
+			else if(front == rear + 1)
+			{
+				return maxSize;
+			}
+			else
+			{
+				return (front - rear + 1);
+			}
+		}
+	
+	
+	
+	
+	}
+}
